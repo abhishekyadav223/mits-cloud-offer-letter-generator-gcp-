@@ -29,12 +29,15 @@ jobs:
         run: |
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
 
+      - name: Authenticate with Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: '${{ secrets.GCP_SA_KEY }}'
+
       - name: Set up gcloud CLI
         uses: google-github-actions/setup-gcloud@v1
         with:
-          version: 'latest'
           project_id: chromatic-baton-461109-i9
-          service_account_key: ${{ secrets.GCP_SA_KEY }}
 
       - name: Deploy to Google Cloud Functions
         run: |
@@ -42,6 +45,6 @@ jobs:
             --runtime python310 \
             --trigger-http \
             --allow-unauthenticated \
-            --entry-point main \
+            --entry-point generate_offer_letter \
             --region us-central1 \
             --source .
