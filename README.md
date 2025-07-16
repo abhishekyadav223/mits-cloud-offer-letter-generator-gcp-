@@ -9,7 +9,7 @@ A serverless web application built using Google Cloud Functions, SendGrid, and H
 
 🌐 Live Demo
 
-[Visit Live Form](https://storage.googleapis.com/mits-intern-site/index.html)
+Visit Live Form
 
 
 ---
@@ -27,7 +27,6 @@ A serverless web application built using Google Cloud Functions, SendGrid, and H
 🛡️ Supports CORS and secure API handling
 
 
-
 ---
 
 📦 Technologies Used
@@ -43,7 +42,6 @@ Email Service: SendGrid API
 Hosting: Google Cloud Storage (for HTML)
 
 Deployment: Google Cloud Functions (Gen 2)
-
 
 
 ---
@@ -71,12 +69,12 @@ Deployment: Google Cloud Functions (Gen 2)
 
 
 gcloud functions deploy generate_offer_letter \
-  --runtime python310 \
-  --trigger-http \
-  --entry-point generate_offer_letter \
-  --region=us-central1 \
-  --allow-unauthenticated \
-  --source .
+--runtime python310 \
+--trigger-http \
+--entry-point generate_offer_letter \
+--region=us-central1 \
+--allow-unauthenticated \
+--source .
 
 🔹 SendGrid Setup
 
@@ -101,4 +99,9 @@ SENDGRID_API_KEY = "your-sendgrid-api-key"
 
 
 ---
+
+
+---
+
+Test CI/CD commit
 
